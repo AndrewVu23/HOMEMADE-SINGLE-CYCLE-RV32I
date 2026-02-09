@@ -7,11 +7,10 @@ module Instr_Mem_tb;
     Instr_Mem dut(.*);
 
     initial begin
-        $dumpfile("waveform.vcd");
-        $dumpvars(0, Instr_Mem_tb);
         reset = 1;
         read_address = 32'b0;
 
+        //
         for (integer i = 0; i < 256; i = i + 1) begin
             dut.instruction_mem[i] = i * 4;
         end
@@ -24,7 +23,7 @@ module Instr_Mem_tb;
         read_address = 32'h00000004; #10;
         read_address = 32'h00000008; #10;
 
-        #10 reset = 1; read_address = 32'h00000012;
+        #10 reset = 1; read_address = 32'h00000014;
         
         $finish;
     end
