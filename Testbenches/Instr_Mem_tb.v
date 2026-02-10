@@ -10,8 +10,10 @@ module Instr_Mem_tb;
         reset = 1;
         read_address = 32'b0;
 
-        //
-        for (integer i = 0; i < 256; i = i + 1) begin
+        //Initialize each array so that the 
+        //Instruction Data matches the Instruction Address
+        //allowing for easier testing
+        for (integer i = 0; i < 1024; i = i + 1) begin
             dut.instruction_mem[i] = i * 4;
         end
 
