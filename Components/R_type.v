@@ -22,7 +22,7 @@ Reg_File Reg_File(
 );
 
 ALU_Decoder ALU_Decoder(
-  .op5(instruction[6]),
+  .op5(instruction[5]),
   .funct_7_5(instruction[30]),
   .funct3(instruction[14:12]),
   .ALUControl(ALUControl),
