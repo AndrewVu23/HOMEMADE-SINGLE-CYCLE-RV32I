@@ -5,7 +5,7 @@ module ALU(
   output logic [31:0] ALUResult
 );
   
-wire [31:0] signed_A, signed_B;
+logic [31:0] signed_A, signed_B;
 
 //Allowing operations on signed numbers 
 //using $signed casting
