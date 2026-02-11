@@ -36,11 +36,5 @@ ALU ALU(
   .ALUControl(ALUControl),
   .flag()
 );
-  
-//Again, we match the Register Data to the Register Name
-always @(posedge clk) begin
-  for (i = 0; i < 32; i = i + 1) begin
-    Reg_File.Registers[i] = i * 4;
-  end
-end
+
 endmodule
