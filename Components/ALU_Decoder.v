@@ -9,10 +9,6 @@ wire [1:0] op5_funct7_5;
 assign op5_funct7_5 = {op5, funct7_5};
 
 always @(*) begin
-  //Set a default value to prevent a latch
-  //when funct3 = 111 (XOR)
-  ALUControl = 3'b000; 
-
   case(ALUOp)
     2'b00: ALUControl = 3'b000; //Addition
     2'b01: ALUControl = 3'b001; //Subtraction
