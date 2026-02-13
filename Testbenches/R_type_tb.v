@@ -7,10 +7,13 @@ module R_type_tb;
 
   initial begin
     clk = 0; reset = 1; 
+    //Initialize the Register File so that
+    //the Register Data matches the Register Number
     for (i = 0; i < 32; i = i + 1) begin
        dut.Reg_File.Registers[i] = i;
     end
 
+    //Write the Instructions to the Instruction Memory
     //Instruction 0 (PC=0): ADD x10, x1, x2  (1 + 2 = 3)
     dut.Instr_Fetch.Instr_Mem.instruction_mem[0] = 32'b0000000_00010_00001_000_01010_0110011;
 
@@ -30,16 +33,18 @@ module R_type_tb;
 
     #10 reset = 0;
 
-    #10 if (dut.ALU_Reg !== 3) $display("Failed: ADD"); else $display("Passed: ADD");
+    //Since the clock only turns on for #5 and turns on again after #5,
+    //We need to display the result after < #5 or else it will move to
+    //the next instruction and display the values as "Failed"
+    #1 if (dut.ALU_Reg !== 3) $display("Failed: ADD"); else $display("Passed: ADD");
     #10 if (dut.ALU_Reg !== 2) $display("Failed: SUB"); else $display("Passed: SUB");
     #10 if (dut.ALU_Reg !== 3) $display("Failed: OR"); else $display("Passed: OR");
     #10 if (dut.ALU_Reg !== 2) $display("Failed: AND"); else $display("Passed: AND");
     #10 if (dut.ALU_Reg !== 1) $display("Failed: SLT"); else $display("Passed: SLT");
 
-    #200
-    
+    #100
+
     $finish;
   end
-
   always #5 clk = ~clk;
 endmodule
