@@ -10,7 +10,7 @@ module Instr_Fetch_tb;
     //debugging easier.
     integer i;
     for (i = 0; i < 1023; i = i + 1) begin
-      Instr_Mem.instruction_mem[i] = i * 4;
+      dut.Instr_Mem.instruction_mem[i] = i * 4;
     end
     PC.PC = 0;
     reset = 0; clk = 0;
