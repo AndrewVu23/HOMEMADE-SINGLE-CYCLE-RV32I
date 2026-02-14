@@ -4,3 +4,13 @@ A modular, SystemVerilog implementation of a RISC-V CPU core based on the RV32I 
 
 ## Architecture Overview
 This processor is a Single-Cycle implementation, meaning every instruction (Fetch, Decode, Execute, Memory, Writeback) completes in exactly one clock cycle. The design prioritizes modularity to allow for future expansion into a 5-stage pipeline.
+### Core Specs:
+- ISA: RISC-V (RV32I)
+- Datapath: Single-Cycle
+- Word Size: 32-bit
+- Supported Instructions:
+  - R-Type: add, sub, and, or, slt
+  - I-Type: addi, andi, ori, lw
+  - S-Type: sw
+  - B-Type: beq
+  - J-Type: jal
