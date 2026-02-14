@@ -17,6 +17,7 @@ This processor is a Single-Cycle implementation, meaning every instruction (Fetc
 
 ## Project Structure
 ```/Components```: Contains the Verilog source files for all modules.
+
 ```/Testbenches```: Contain Testbenches for "most" of the modules and datapaths.
 
 ## Hardware Logic & Data Flow
@@ -29,10 +30,12 @@ The processor follows the standard RISC-V functional stages:
 
 ## Verification & Testing
 Backdoor Initialization: Register file and memory arrays are initialized with known values to isolate instruction logic.
+
 Direct Stimulus Injection: The ```force``` and ```release``` Verilog commands are used to inject specific machine code sequences to verify corner cases in the datapath.
+
 Trace Analysis: Signal timing and data transitions were verified via VCD waveform analysis.
 
-(All the writing, running, and verifying were done using [siliconspace.org](https://siliconspace.org) (not sponsored), an online code & waveform editor)
+(All the writing, running, and verifying were done using [siliconspace.org](https://siliconspace.org) (not sponsored), an online RTL-to-GDSII editor)
 
 ## Future Roadmap
 - Implement a 5-stage Pipeline (IF, ID, EX, MEM, WB).
