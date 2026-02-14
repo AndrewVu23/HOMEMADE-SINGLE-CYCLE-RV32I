@@ -9,11 +9,11 @@ This processor is a Single-Cycle implementation, meaning every instruction (Fetc
 - Datapath: Single-Cycle
 - Word Size: 32-bit
 - Supported Instructions:
-  - R-Type: add, sub, and, or, slt
-  - I-Type: addi, andi, ori, lw
-  - S-Type: sw
-  - B-Type: beq
-  - J-Type: jal
+  - R-Type: ```add```, ```sub```, ```and```, ```or```, ```slt```
+  - I-Type: ```addi```, ```andi```, ```ori```, ```lw```
+  - S-Type: ```sw```
+  - B-Type: ```beq```
+  - J-Type: ```jal```
 
 ## Project Structure
 ```/Components```: Contains the Verilog source files for all modules.
