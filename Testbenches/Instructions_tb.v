@@ -14,7 +14,7 @@ module Instructions_tb;
         dut.Reg_File_Module.Registers[1] = 32'd0; 
         dut.Data_Mem_Module.data_mem[1]  = 32'h12345678;
 
-        //Force Instruction: lw x2, 4(x1) -> Isolated Testing
+        // Force Instruction: lw x2, 4(x1) -> Isolated Testing
         force dut.instruction = 32'b000000000100_00001_010_00010_0000011;
 
         @(posedge clk); #1; 
@@ -60,8 +60,8 @@ module Instructions_tb;
         // Setup: Start at PC=200
         dut.PC_Module.PC = 32'd200;
 
-        // Force Instruction: jal x1, 20
-        force dut.instruction = 32'b0_0000010100_0_00000000_00001_1101111;
+        // Force Instruction: jal x1, 20  (imm[10:1]=10 for +20 byte offset)
+        force dut.instruction = 32'b0_0000001010_0_00000000_00001_1101111;
 
         @(posedge clk); #1;
 
