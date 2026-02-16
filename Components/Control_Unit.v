@@ -1,7 +1,7 @@
 module Control_Unit(
   input logic [6:0] opcode,
   input flag,
-  output logic reg_write, ALUSrc, MemWrite, Branch, Jump, PCSrc
+  output logic reg_write, ALUSrc, MemWrite, Branch, Jump, PCSrc,
   output logic [1:0] ImmSrc, ALUOp, ResultSrc
 );
   always @(*) begin
