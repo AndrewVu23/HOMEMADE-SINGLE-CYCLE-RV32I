@@ -5,12 +5,9 @@ module ALU(
   output logic [31:0] ALUResult
 );
   
-logic [31:0] signed_A, signed_B;
-
-//Allowing operations on signed numbers 
-//using $signed casting
-assign signed_A = $signed(A);
-assign signed_B = $signed(B);
+logic signed [31:0] signed_A, signed_B;
+assign signed_A = A;
+assign signed_B = B;
 
 //ALU Operations
 always @(*) begin
