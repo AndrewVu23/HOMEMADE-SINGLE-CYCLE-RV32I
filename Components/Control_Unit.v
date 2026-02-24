@@ -11,7 +11,7 @@ module Control_Unit(
         ImmSrc = 2'b00; ALUOp = 2'b00;
       end
       7'b0100011: begin
-        reg_write = 0; ALUSrc = 1; MemWrite = 1; ResultSrc = 1'bx; Branch = 0; Jump = 0;
+        reg_write = 0; ALUSrc = 1; MemWrite = 1; ResultSrc = 2'bxx; Branch = 0; Jump = 0;
         ImmSrc = 2'b01; ALUOp = 2'b00;
       end
       7'b0110011: begin
